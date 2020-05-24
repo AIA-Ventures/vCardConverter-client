@@ -1,0 +1,68 @@
+{
+    "_template": {
+        "title": "Phone - {{subtype}}",
+		"tags": ["phone", "call", "number"],
+		"ui":  { 
+		    "type": "Phone",
+        "section_label": "{{subtype}}",
+		  	"order": "{{order}}"
+		},
+		"vcard": { 
+			"import_type": "tel",
+			"singleton": false, 
+			"params": {
+				"TYPE": "{{subtype}}"
+			}
+		}
+    },
+    "post_processors": [
+        {
+            "key_path": ["ui", "order"],
+            "fn_name": "parseInt"
+        }
+    ],
+    "records": [
+        {
+            "inject_map": {
+                "subtype": "Home",
+                "order": 0
+            },
+            "tags": ["home", "house", "residence", "apartment"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Work",
+            "order": 1
+          },
+          "tags": ["work", "office"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Fax",
+            "order": 2
+          },
+          "tags": ["Fax"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Pager",
+            "order": 3
+          },
+          "tags": ["pager"]
+        },
+        {
+          "inject_map": {
+            "subtype": "iPhone",
+            "order": 4
+          },
+          "tags": ["iPhone"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Other",
+            "order": 5
+          },
+          "tags": ["other"]
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "_template": {
+        "title": "Name - {{subtype}}",
+		"tags": ["name", "moniker"],
+		"ui":  { 
+		    "type": "name",
+        "section_label": "{{subtype}}",
+			  "order": "{{order}}"
+		},
+		"vcard": { 
+			"import_type": {
+        "type": "n",
+        "attribute_label": "{{label}}"
+      },
+			"singleton": true
+		}
+    },
+    "post_processors": [
+        {
+          "key_path": ["ui", "order"],
+          "fn_name": "parseInt"
+        }
+    ],
+    "records": [
+        {
+            "inject_map": {
+                "subtype": "Title",
+                "order": 0,
+                "label": "title"
+            },
+            "tags": ["title", "prefix"]
+        },
+        {
+            "inject_map": {
+                "subtype": "First",
+                "order": 1,
+                "label": "given"
+            },
+            "tags": ["first", "given"]
+        },
+        {
+            "inject_map": {
+                "subtype": "Middle",
+                "order": 2,
+                "label": "additional"
+            },
+            "tags": ["middle", "additional"]
+        },
+        {
+            "inject_map": {
+                "subtype": "Last",
+                "order": 3,
+                "label": "family"
+            },
+            "tags": ["last", "family", "surname"]
+        },
+        {
+            "inject_map": {
+                "subtype": "Suffix",
+                "order": 4,
+                "label": "suffix"
+            },
+            "tags": ["suffix"]
+        }
+    ]
+}

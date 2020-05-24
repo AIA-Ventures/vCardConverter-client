@@ -1,0 +1,43 @@
+{
+    "_template": {
+        "title": "Employment - {{subtype}}",
+		"tags": ["employer", "employment", "work", "job"],
+		"ui":  { 
+		    "type": "employment",
+            "section_label": "{{subtype}}",
+            "order": "{{order}}"
+		},
+		"vcard": { 
+			"import_type": "{{label}}",
+			"singleton": true
+		}
+    },
+    "post_processors": [
+        {
+          "key_path": ["ui", "order"],
+          "fn_name": "parseInt"
+        },
+        {
+          "key_path": ["vcard", "import_type", "attribute_label"],
+          "fn_name": "parseInt"
+        }
+    ],
+    "records": [
+        {
+            "inject_map": {
+                "subtype": "Phonetic Company",
+                "order": 2,
+                "label": "x-phonetic-org"
+            },
+            "tags": ["company", "organization", "pronunciation"]
+        },
+        {
+            "inject_map": {
+                "subtype": "Job Title",
+                "order": 3,
+                "label": "title"
+            },
+            "tags": ["job", "role", "position"]
+        }
+    ]
+}

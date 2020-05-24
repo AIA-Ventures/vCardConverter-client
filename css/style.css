@@ -1,0 +1,157 @@
+.container {
+    margin-top: 10px;
+}
+
+.green {
+    color: #84E290 !important;
+}
+
+/* Components */
+.outline-green-button {
+    border: solid 5px #84E290;
+    border-radius: 8px;
+    font-size: 150%;
+    color: #84E290;
+    background-color: #FFF;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+    outline: none;
+
+    -webkit-transition: ease-out 300ms;
+    -moz-transition: ease-out 300ms;
+    -o-transition: ease-out 300ms;
+    transition: ease-out 300ms;
+}
+
+.outline-green-button:focus {
+    outline: none;
+}
+
+.outline-green-button:hover {
+    border: solid 5px #84E290;
+    border-radius: 8px;
+    font-size: 150%;
+    color: #fff;
+    background-color: #84E290;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+    outline: none;
+
+    -webkit-transition: ease-out 300ms;
+    -moz-transition: ease-out 300ms;
+    -o-transition: ease-out 300ms;
+    transition: ease-out 300ms;
+}
+
+
+.outline-blue-button {
+    border: solid 5px #5894f5;
+    border-radius: 8px;
+    font-size: 150%;
+    color: #5894f5;
+    background-color: #FFF;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+    outline: none;
+
+    -webkit-transition: ease-out 300ms;
+    -moz-transition: ease-out 300ms;
+    -o-transition: ease-out 300ms;
+    transition: ease-out 300ms;
+}
+
+.outline-blue-button:focus {
+    outline: none;
+}
+
+.outline-blue-button:hover {
+    border: solid 5px #5894f5;
+    border-radius: 8px;
+    font-size: 150%;
+    color: #fff;
+    background-color: #5894f5;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+    outline: none;
+
+    -webkit-transition: ease-out 300ms;
+    -moz-transition: ease-out 300ms;
+    -o-transition: ease-out 300ms;
+    transition: ease-out 300ms;
+}
+
+
+/* NavBar */
+.navbar-logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* Header */
+.header-image {
+    width: 100%;
+}
+
+.header-text-section {
+    padding-top: 30px !important;
+}
+
+/* Text Styles */
+.subtitle {
+    font-size: 180%;
+    font-weight: bold;
+    color: #6A6A6A;
+}
+
+.subtitle2 {
+    font-size: 180%;
+    color: #6A6A6A;
+    line-height: 0.9;
+}
+
+.subtitle3 {
+    font-size: 150%;
+    color: #6A6A6A;
+    line-height: 0.9;
+}
+
+.title {
+    font-size: 400%;
+    font-weight: bold;
+    color: #000;
+    line-height: 1;
+}
+
+/* csvToVcard */
+#mapContainer {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Contact Card */
+.contact-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 30px !important;
+}
+
+.contact-card-name {
+    margin-right: 7px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.label {
+    color: #999
+}

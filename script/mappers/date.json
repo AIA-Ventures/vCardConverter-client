@@ -1,0 +1,45 @@
+{
+    "_template": {
+        "title": "Date - {{subtype}}",
+		"tags": ["date", "day", "occasion"],
+		"ui":  { 
+		    "type": "Date",
+        "section_label": "{{subtype}}",
+		  	"order": "{{order}}"
+		},
+		"vcard": { 
+			"import_type": "x-abdate",
+			"singleton": false, 
+			"label": "{{subtype}}"
+		}
+    },
+    "post_processors": [
+        {
+            "key_path": ["ui", "order"],
+            "fn_name": "parseInt"
+        }
+    ],
+    "records": [
+        {
+            "inject_map": {
+                "subtype": "Birthday",
+                "order": 0
+            },
+            "tags": ["bday", "birthday"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Anniversary",
+            "order": 1
+          },
+          "tags": ["marriage", "wedding", "anniversary"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Other",
+            "order": 2
+          },
+          "tags": []
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "_template": {
+        "title": "Notes",
+		"tags": ["notes", "note"],
+		"ui":  { 
+		    "type": "note",
+            "section_label": "Notes",
+			"order": 0
+		},
+		"vcard": { 
+			"import_type": "note",
+			"singleton": true
+		}
+    },
+    "post_processors": [],
+    "records": [
+        {
+            "inject_map": {},
+            "tags": []
+        }
+    ]
+}

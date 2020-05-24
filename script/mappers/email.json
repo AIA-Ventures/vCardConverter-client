@@ -1,0 +1,47 @@
+{
+    "_template": {
+        "title": "Email - {{subtype}}",
+		"tags": ["email", "mail"],
+		"ui":  { 
+		    "type": "Email",
+        "section_label": "{{subtype}}",
+		  	"order": "{{order}}"
+		},
+		"vcard": { 
+			"import_type": "email",
+			"singleton": false, 
+			"params": {
+				"TYPE": "{{subtype}}"
+			}
+		}
+    },
+    "post_processors": [
+        {
+            "key_path": ["ui", "order"],
+            "fn_name": "parseInt"
+        }
+    ],
+    "records": [
+        {
+            "inject_map": {
+                "subtype": "Home",
+                "order": 0
+            },
+            "tags": ["home", "house", "residence", "apartment"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Work",
+            "order": 1
+          },
+          "tags": ["work", "office"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Other",
+            "order": 2
+          },
+          "tags": ["other"]
+        }
+    ]
+}

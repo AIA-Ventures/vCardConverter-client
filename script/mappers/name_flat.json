@@ -1,0 +1,55 @@
+{
+    "_template": {
+        "title": "Name - {{subtype}}",
+		"tags": ["name", "moniker"],
+		"ui":  { 
+		    "type": "name",
+            "section_label": "{{subtype}}",
+			"order": "{{order}}"
+		},
+		"vcard": { 
+			"import_type": "{{import_type}}",
+			"singleton": true
+		}
+    },
+    "post_processors": [
+        {
+          "key_path": ["ui", "order"],
+          "fn_name": "parseInt"
+        }
+    ],
+    "records": [
+        {
+            "inject_map": {
+                "subtype": "Nickname",
+                "order": 5,
+                "import_type": "nickname"
+            },
+            "tags": ["nickname", "nikname", "pet name", "pseudonym"]
+        },
+        {
+            "inject_map": {
+                "subtype": "Maiden Name",
+                "order": 6,
+                "import_type": "x-maidenname"
+            },
+            "tags": ["maiden", "pre-marital", "original"]
+        },
+        {
+            "inject_map": {
+                "subtype": "Phonetic First Name",
+                "order": 7,
+                "import_type": "x-phonetic-first-name"
+            },
+            "tags": ["phonetic", "first", "sound", "pronunciation"]
+        },
+        {
+            "inject_map": {
+                "subtype": "Phonetic Last Name",
+                "order": 8,
+                "import_type": "x-phonetic-last-name"
+            },
+            "tags": ["phonetic", "last", "surname", "family", "sound", "pronunciation"]
+        }
+    ]
+}

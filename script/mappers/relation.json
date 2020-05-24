@@ -1,0 +1,122 @@
+{
+    "_template": {
+        "title": "Relation - {{subtype}}",
+		"tags": ["relation", "person"],
+		"ui":  { 
+		    "type": "Relation",
+            "section_label": "{{subtype}}",
+		  	"order": "{{order}}"
+		},
+		"vcard": { 
+			"import_type": "x-abrelatednames",
+			"singleton": false, 
+			"label": "{{subtype}}"
+		}
+    },
+    "post_processors": [
+        {
+            "key_path": ["ui", "order"],
+            "fn_name": "parseInt"
+        }
+    ],
+    "records": [
+        {
+            "inject_map": {
+                "subtype": "Mother",
+                "order": 0
+            },
+            "tags": ["mom", "mother"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Father",
+            "order": 1
+          },
+          "tags": ["dad", "father"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Parent",
+            "order": 2
+          },
+          "tags": ["parent"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Son",
+            "order": 3
+          },
+          "tags": ["son"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Daughter",
+            "order": 4
+          },
+          "tags": ["daughter"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Brother",
+            "order": 5
+          },
+          "tags": ["brother", "bro"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Sister",
+            "order": 6
+          },
+          "tags": ["sister"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Child",
+            "order": 7
+          },
+          "tags": ["child", "kid"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Friend",
+            "order": 8
+          },
+          "tags": ["friend", "chum", "buddy"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Spouse",
+            "order": 9
+          },
+          "tags": ["spouse"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Partner",
+            "order": 10
+          },
+          "tags": ["partner"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Assistant",
+            "order": 11
+          },
+          "tags": ["assistant"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Manager",
+            "order": 12
+          },
+          "tags": ["manager"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Other",
+            "order": 13
+          },
+          "tags": ["other"]
+        }
+    ]
+}

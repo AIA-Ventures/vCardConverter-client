@@ -1,0 +1,62 @@
+{
+    "_template": {
+        "title": "Social Media - {{subtype}}",
+		"tags": ["social", "chat", "im", "message", "media", "handle"],
+		"ui":  { 
+		    "type": "Social Media",
+            "section_label": "{{subtype}}",
+		  	"order": "{{order}}"
+		},
+		"vcard": { 
+			"import_type": "impp",
+			"singleton": false, 
+			"params": {
+                "X-SERVICE-TYPE": "{{subtype}}",
+                "TYPE": "Home"
+            }
+		}
+    },
+    "post_processors": [
+        {
+            "key_path": ["ui", "order"],
+            "fn_name": "parseInt"
+        }
+    ],
+    "records": [
+        {
+            "inject_map": {
+                "subtype": "Facebook",
+                "order": 0
+            },
+            "tags": ["fb", "facebook"]
+        },
+        {
+            "inject_map": {
+                "subtype": "GoogleTalk",
+                "order": 1
+            },
+            "tags": ["google", "talk", "hangouts", "meet"]
+        },
+        {
+            "inject_map": {
+                "subtype": "Instagram",
+                "order": 2
+            },
+            "tags": ["instagram", "instagram"]
+        },
+        {
+            "inject_map": {
+                "subtype": "Twitter",
+                "order": 3
+            },
+            "tags": ["tweet", "twitter"]
+        },
+        {
+            "inject_map": {
+                "subtype": "Other",
+                "order": 4
+            },
+            "tags": []
+        }
+    ]
+}

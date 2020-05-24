@@ -1,0 +1,40 @@
+{
+    "_template": {
+        "title": "URL - {{subtype}}",
+		"tags": ["url", "link", "web", "site"],
+		"ui":  { 
+		    "type": "Link",
+        "section_label": "{{subtype}}",
+		  	"order": "{{order}}"
+		},
+		"vcard": { 
+			"import_type": "url",
+			"singleton": false, 
+			"params": {
+        "TYPE": "{{sub_type}}"
+      }
+		}
+    },
+    "post_processors": [
+        {
+            "key_path": ["ui", "order"],
+            "fn_name": "parseInt"
+        }
+    ],
+    "records": [
+        {
+            "inject_map": {
+                "subtype": "Home",
+                "order": 0
+            },
+            "tags": ["home"]
+        },
+        {
+          "inject_map": {
+            "subtype": "Other",
+            "order": 1
+          },
+          "tags": []
+        }
+    ]
+}

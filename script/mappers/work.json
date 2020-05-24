@@ -1,0 +1,46 @@
+{
+    "_template": {
+        "title": "Employment - {{subtype}}",
+		"tags": ["employer", "employment", "work", "job"],
+		"ui":  { 
+		    "type": "employment",
+            "section_label": "{{subtype}}",
+            "order": "{{order}}"
+		},
+		"vcard": { 
+			"import_type": {
+                "type": "org",
+                "attribute_label": "{{label}}"
+            },
+			"singleton": true
+		}
+    },
+    "post_processors": [
+        {
+          "key_path": ["ui", "order"],
+          "fn_name": "parseInt"
+        },
+        {
+          "key_path": ["vcard", "import_type", "attribute_label"],
+          "fn_name": "parseInt"
+        }
+    ],
+    "records": [
+        {
+            "inject_map": {
+                "subtype": "Company",
+                "order": 0,
+                "label": 0
+            },
+            "tags": ["company", "organization"]
+        },
+        {
+            "inject_map": {
+                "subtype": "Division",
+                "order": 1,
+                "label": 1
+            },
+            "tags": ["division", "department"]
+        }
+    ]
+}
