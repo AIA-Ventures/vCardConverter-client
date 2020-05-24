@@ -4,6 +4,7 @@
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
 
 
         <!-- Scripts -->
@@ -39,14 +40,21 @@
               </nav>
 
               <!-- Header Section -->
+              <br>
+              <div class="row">
+                <p class="subtitle">vCard &#8594; CSV Converter</p>
+              </div>
+
+              <br>
+
               <div class="row">
                 <div class="col-md-6">
-                    <p class="subtitle">vCard &#8594; CSV Converter</p>
+                   
 
                     <br>
 
                     <p class="subtitle3">1. Upload your vCard file:</p>
-                    <input type="file" onchange="processFile()" id="csvinput">
+                    <input type="file" onchange="processFile()" id="csvinput"  data-role="file" data-mode="drop">
                     <br>
 
                     
@@ -77,6 +85,8 @@
 
 
         </div>
+
+        <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
     </body>
 
 </html>
