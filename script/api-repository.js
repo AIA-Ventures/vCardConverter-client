@@ -12,7 +12,11 @@ function postVcardToCsv(data) {
         dataType: 'json',
         success: function (data) {
             var csvDownloadLink = 'data:' + data['file_type'] + ';base64,' + data['contents']
+
             $("#downloadHub").attr("href", csvDownloadLink) // DOWNLOAD
+            $("#downloadButton").removeClass("outline-gray-button")
+            $("#downloadButton").addClass("outline-blue-button")
+            $('.inputDisabled').prop("disabled", true); 
         }
     });
 }
@@ -30,6 +34,10 @@ function postCsvToVcard(data) {
         success: function (data) {
             var csvDownloadLink = 'data:' + data['file_type'] + ';base64,' + data['contents']
             $("#downloadHub").attr("href", csvDownloadLink)
+
+            $("#downloadButton").removeClass("outline-gray-button")
+            $("#downloadButton").addClass("outline-blue-button")
+            $('.inputDisabled').prop("disabled", true); 
         }
     });
 }

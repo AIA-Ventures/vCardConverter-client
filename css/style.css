@@ -92,6 +92,29 @@
     transition: ease-out 300ms;
 }
 
+.outline-gray-button {
+    border: solid 5px #BBB;
+    border-radius: 8px;
+    font-size: 150%;
+    color: #BBB;
+    background-color: #FFF;
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+    outline: none;
+
+    -webkit-transition: ease-out 300ms;
+    -moz-transition: ease-out 300ms;
+    -o-transition: ease-out 300ms;
+    transition: ease-out 300ms;
+}
+
+.outline-gray-button:focus {
+    outline: none;
+}
+
 
 /* NavBar */
 .navbar-logo {
