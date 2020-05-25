@@ -16,12 +16,13 @@ function postVcardToCsv(data) {
                hitType: 'event',
                eventCategory: 'to_csv',
                eventAction: 'convert',
-               eventLabel: '',
+               eventLabel: 'web_conversion_csv',
                eventValue: data["metadata"]["records_processed"],
                hitCallback: function () {
                    console.log("SUBMITTED EVENT TO GA")
                }
            }
+           console.log(ga_payload);
            ga('send', ga_payload);
 
             var csvDownloadLink = 'data:' + data['file_type'] + ';base64,' + data['contents']
@@ -49,12 +50,13 @@ function postCsvToVcard(data) {
                 hitType: 'event',
                 eventCategory: 'to_vcard',
                 eventAction: 'convert',
-                eventLabel: '',
+                eventLabel: 'web_conversion_vcard',
                 eventValue: data["metadata"]["records_processed"],
                 hitCallback: function () {
                     console.log("SUBMITTED EVENT TO GA")
                 }
             }
+            console.log(ga_payload);
             ga('send', ga_payload);
 
             var csvDownloadLink = 'data:' + data['file_type'] + ';base64,' + data['contents']
