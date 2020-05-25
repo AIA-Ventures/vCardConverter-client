@@ -74,7 +74,7 @@ function setUpUI(csv) {
 }
 
 function removeButton(id) {
-    return '<button id="remove_' + id + '" class="remove-button">remove</button>'
+    return '<button id="remove_' + id + '" class="remove-button"><img src="assets/cancel.png" style="width: 20px; height: 20px;"/></button>'
 }
 
 function setRemoveButtonListener(i, csvAttr) {
