@@ -16,7 +16,7 @@ function postVcardToCsv(data) {
             $("#downloadHub").attr("href", csvDownloadLink) // DOWNLOAD
             $("#downloadButton").removeClass("outline-gray-button")
             $("#downloadButton").addClass("outline-blue-button")
-            $('.inputDisabled').prop("disabled", true); 
+            $('#downloadButton').prop("disabled", true); 
         }
     });
 }
@@ -37,7 +37,7 @@ function postCsvToVcard(data) {
 
             $("#downloadButton").removeClass("outline-gray-button")
             $("#downloadButton").addClass("outline-blue-button")
-            $('.inputDisabled').prop("disabled", true); 
+            $('#downloadButton').prop("disabled", true); 
         }
     });
 }
