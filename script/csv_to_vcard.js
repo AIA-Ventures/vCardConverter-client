@@ -18,6 +18,8 @@ function reset() {
     global_csv = null
     $("#mapContainer").html("")
     $("#contact-card-container").html("")
+
+    resetDownloadButton()
 }
 
 function processFile() {

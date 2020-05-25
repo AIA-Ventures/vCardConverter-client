@@ -200,3 +200,10 @@ function CSVToArray( strData, strDelimiter ){
 
   return( arrData );
 }
+
+function resetDownloadButton() {
+  $("#downloadHub").attr("href", "")
+  $("#downloadButton").addClass("outline-gray-button")
+  $("#downloadButton").removeClass("outline-blue-button")
+  $('#downloadButton').prop("disabled", true); 
+}

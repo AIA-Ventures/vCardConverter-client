@@ -14,6 +14,11 @@ $(document).ready(function() {
 
 });
 
+function reset() {
+    global_vcard = null
+    resetDownloadButton()
+}
+
 function processFile() {
     const preview = $("#preview");
     preview.html("")
@@ -21,6 +26,8 @@ function processFile() {
     const reader = new FileReader();
 
     reader.addEventListener("load", function() {
+        reset()
+
         preview.attr("src", reader.result); // base 64 ENCODE
 
         var vcard = new VcardtoCSV(reader.result, 'data.csv')
