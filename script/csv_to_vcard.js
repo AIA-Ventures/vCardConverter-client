@@ -256,6 +256,8 @@ class CSVtoVcard {
         console.log("REMOVED '" + attr + "' from mapping. @Ajay, update autocomplete #" + i + " here!")
 
         delete this.mapping[attr]
+        delete this.uimapping[this.headers[i]]
+        this.updateContactCardUI()
     }
   
 
