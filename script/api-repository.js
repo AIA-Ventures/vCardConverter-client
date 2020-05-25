@@ -11,19 +11,12 @@ function postVcardToCsv(data) {
         },
         dataType: 'json',
        success: function (data) {
-           
-           const ga_payload = {
-               hitType: 'event',
-               eventCategory: 'to_csv',
-               eventAction: 'convert',
-               eventLabel: 'web_conversion_csv',
-               eventValue: data["metadata"]["records_processed"],
-               hitCallback: function () {
-                   console.log("SUBMITTED EVENT TO GA")
-               }
-           }
-           console.log(ga_payload);
-           ga('send', ga_payload);
+
+           gtag('event', 'convert', {
+               'event_category': 'to_csv',
+               'event_label': 'web_conversion_csv',
+               'value': data["metadata"]["records_processed"]
+           });
 
             var csvDownloadLink = 'data:' + data['file_type'] + ';base64,' + data['contents']
 
@@ -46,18 +39,11 @@ function postCsvToVcard(data) {
         },
         dataType: 'json',
         success: function (data) {
-            const ga_payload = {
-                hitType: 'event',
-                eventCategory: 'to_vcard',
-                eventAction: 'convert',
-                eventLabel: 'web_conversion_vcard',
-                eventValue: data["metadata"]["records_processed"],
-                hitCallback: function () {
-                    console.log("SUBMITTED EVENT TO GA")
-                }
-            }
-            console.log(ga_payload);
-            ga('send', ga_payload);
+            gtag('event', 'convert', {
+                'event_category': 'to_vcard',
+                'event_label': 'web_conversion_vcard',
+                'value': data["metadata"]["records_processed"]
+            });
 
             var csvDownloadLink = 'data:' + data['file_type'] + ';base64,' + data['contents']
             $("#downloadHub").attr("href", csvDownloadLink)
