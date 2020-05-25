@@ -168,9 +168,20 @@ function attach_boxes(global_csv) {
         document.querySelector(input_id).blur();
         const selection = feedback.selection.value;
         document.querySelector(input_id).placeholder = selection.title;
+        document.querySelector(input_id).classList.add("autoComplete_hasValue")
         document.querySelector(input_id).value = "";
 
+        document.querySelector(`#remove_${box_idx}`).disabled = false;
+
         global_csv.autocompleteMapped(selection, box_idx)
+
+        // attempt to select the next box
+        try {
+          document.querySelector(`#autoComplete${box_idx + 1}`).focus()
+        } catch {
+          console.log("No more boxes to select")
+        }
+        
 
       },
     });

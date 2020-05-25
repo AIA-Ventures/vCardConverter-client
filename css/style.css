@@ -123,13 +123,17 @@
     margin-left: 10px;
 }
 
-.remove-button:hover {
+.remove-button:hover:enabled {
     color: #5894f5;
     border: none;
     outline: none;
     background-color: rgba(0,0,0,0);
     margin-left: 10px;
     opacity: 0.5;
+}
+
+.remove-button:disabled {
+    opacity: 0.2;
 }
 
 

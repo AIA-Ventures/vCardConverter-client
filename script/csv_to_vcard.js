@@ -62,7 +62,8 @@ function setUpUI(csv) {
     var headers = csv.headers
 
     for (var i = 0; i < headers.length; i++) {
-        var appendString = '<tr><td>' + headers[i] + '</td><td>' + '<input class="autoComplete" type="text" tabindex="1">' + '</td><td>' + removeButton(i) + '</td></tr>'
+    
+        var appendString = '<tr><td>' + headers[i] + '</td><td>' + '<input class="autoComplete" type="search" tabindex="1">' + '</td><td>' + removeButton(i) + '</td></tr>'
         
         appendHtml($("#mapContainer"), appendString)
 
@@ -81,7 +82,7 @@ function setUpUI(csv) {
 }
 
 function removeButton(id) {
-    return '<button id="remove_' + id + '" class="remove-button"><img src="assets/cancel.png" style="width: 20px; height: 20px;"/></button>'
+    return '<button disabled id="remove_' + id + '" class="remove-button"><img src="assets/cancel.png" style="width: 30px; height: 30px;"/></button>'
 }
 
 function setRemoveButtonListener(i, csvAttr) {
@@ -249,10 +250,15 @@ class CSVtoVcard {
     }
 
     removeAttr(attr, i) {
-        console.log("REMOVED '" + attr + "' from mapping. @Ajay, update autocomplete #" + i + " here!")
-
         delete this.mapping[attr]
         delete this.uimapping[this.headers[i]]
+
+        var input_id = `#autoComplete${i}`
+        document.querySelector(input_id).placeholder = "Select a Field"
+        document.querySelector(input_id).classList.remove("autoComplete_hasValue")
+        
+        document.querySelector(`#remove_${i}`).disabled = true;
+
         this.updateContactCardUI()
     }
   
