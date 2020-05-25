@@ -10,7 +10,20 @@ function postVcardToCsv(data) {
             'content-type': 'application/json'
         },
         dataType: 'json',
-        success: function (data) {
+       success: function (data) {
+           
+           const ga_payload = {
+               hitType: 'event',
+               eventCategory: 'to_csv',
+               eventAction: 'convert',
+               eventLabel: '',
+               eventValue: data["metadata"]["records_processed"],
+               hitCallback: function () {
+                   console.log("SUBMITTED EVENT TO GA")
+               }
+           }
+           ga('send', ga_payload);
+
             var csvDownloadLink = 'data:' + data['file_type'] + ';base64,' + data['contents']
 
             $("#downloadHub").attr("href", csvDownloadLink) // DOWNLOAD
@@ -32,6 +45,18 @@ function postCsvToVcard(data) {
         },
         dataType: 'json',
         success: function (data) {
+            const ga_payload = {
+                hitType: 'event',
+                eventCategory: 'to_vcard',
+                eventAction: 'convert',
+                eventLabel: '',
+                eventValue: data["metadata"]["records_processed"],
+                hitCallback: function () {
+                    console.log("SUBMITTED EVENT TO GA")
+                }
+            }
+            ga('send', ga_payload);
+
             var csvDownloadLink = 'data:' + data['file_type'] + ';base64,' + data['contents']
             $("#downloadHub").attr("href", csvDownloadLink)
 
