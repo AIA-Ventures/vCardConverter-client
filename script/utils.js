@@ -83,7 +83,6 @@ function setAutoComplete(id) {
           for (obj of sample_inputs) {
             obj.tags.unshift(obj.title);
             obj.tags = obj.tags.join(",");
-            console.log(obj);
           }
           
 
