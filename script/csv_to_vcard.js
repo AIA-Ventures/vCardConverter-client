@@ -63,7 +63,11 @@ function setUpUI(csv) {
 
     for (var i = 0; i < headers.length; i++) {
     
-        var appendString = '<tr><td>' + headers[i] + '</td><td>' + '<input class="autoComplete" type="search" tabindex="1">' + '</td><td>' + removeButton(i) + '</td></tr>'
+        var title = headers[i]
+        if (title == "" || title == null) {
+            title = "[NO-HEADER]"
+        }
+        var appendString = '<tr><td>' + title + '</td><td>' + '<input class="autoComplete" type="search" tabindex="1">' + '</td><td>' + removeButton(i) + '</td></tr>'
         
         appendHtml($("#mapContainer"), appendString)
 
