@@ -131,7 +131,9 @@ class CSVtoVcard {
     }
 
     csvArr(csvString) {
-        return CSVToArray(csvString)
+        var arr = CSVToArray(csvString)
+        console.log(arr)
+        return arr
     }
 
     samplefield(id) {
@@ -139,8 +141,8 @@ class CSVtoVcard {
     }
 
     initHeaders(csvString) {
+        this.csv_arr[0] = csvString.split("\n")[0].split(",")
         return this.csv_arr[0]
-            
     }
 
     setMapAttr(csvheader, vcardattr) {
