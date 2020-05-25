@@ -22,6 +22,15 @@ function postVcardToCsv(data) {
                    console.log("SUBMITTED EVENT TO GA")
                }
            }
+           if ("ga" in window) {
+               tracker = ga.getAll()[0];
+               console.log("GOT A TRACKER")
+               if (tracker)
+                   tracker.send("event", "Test", "Test GA");
+           } else {
+               console.log("Tracker not properly initialized")
+           }
+
            console.log(ga_payload);
            ga('send', ga_payload);
 
