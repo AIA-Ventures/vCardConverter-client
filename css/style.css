@@ -115,6 +115,23 @@
     outline: none;
 }
 
+.remove-button {
+    color: #5894f5;
+    border: none;
+    outline: none;
+    background-color: rgba(0,0,0,0);
+    margin-left: 10px;
+}
+
+.remove-button:hover {
+    color: #5894f5;
+    border: none;
+    outline: none;
+    background-color: rgba(0,0,0,0);
+    margin-left: 10px;
+    opacity: 0.5;
+}
+
 
 /* NavBar */
 .navbar-logo {

@@ -55,17 +55,32 @@ function setUpUI(csv) {
             continue
         }
 
-        var appendString = '<tr><td>' + headers[i] + '</td><td>' + '<input class="autoComplete" type="text" tabindex="1">' + '</td></tr>'
+        var appendString = '<tr><td>' + headers[i] + '</td><td>' + '<input class="autoComplete" type="text" tabindex="1">' + '</td><td>' + removeButton(i) + '</td></tr>'
         
         appendHtml($("#mapContainer"), appendString)
+
         attach_boxes(global_csv)
           
+    }
+
+    for (var i = 0; i < headers.length; i++) {
+        setRemoveButtonListener(i, headers[i])
     }
 
     for (var i = 0; i < headers.length; i++) {
         setAutoComplete('autocomplete' + headers[i])
     }
 
+}
+
+function removeButton(id) {
+    return '<button id="remove_' + id + '" class="remove-button">remove</button>'
+}
+
+function setRemoveButtonListener(i, csvAttr) {
+    $("#remove_" + i).click(() => {
+        global_csv.removeAttr(csvAttr, i)
+    })
 }
 
 //   Utilities
@@ -215,9 +230,6 @@ class CSVtoVcard {
             )
         })
         
-
-        
-        
     }
 
 
@@ -227,7 +239,12 @@ class CSVtoVcard {
         this.uimapping[this.headers[box_idx]].title = selection.title
 
         this.updateContactCardUI()
+    }
 
+    removeAttr(attr, i) {
+        console.log("REMOVED '" + attr + "' from mapping. @Ajay, update autocomplete #" + i + " here!")
+
+        delete this.mapping[attr]
     }
   
 
