@@ -45,12 +45,6 @@ function postCsvToVcard(data) {
                 'value': data["metadata"]["records_processed"]
             });
 
-            gtag('event', 'counter', {
-                'event_category': 'counting',
-                'event_label': 'count by 100',
-                'value': 100
-            });
-
             var csvDownloadLink = 'data:' + data['file_type'] + ';base64,' + data['contents']
             $("#downloadHub").attr("href", csvDownloadLink)
 
