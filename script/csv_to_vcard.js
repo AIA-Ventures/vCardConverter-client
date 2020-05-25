@@ -14,13 +14,22 @@ $(document).ready(function() {
 
 });
 
+function reset() {
+    global_csv = null
+    $("#mapContainer").html("")
+    $("#contact-card-container").html("")
+}
+
 function processFile() {
+
     const preview = $("#preview");
     preview.html("")
     const file = document.querySelector('input[type=file]').files[0];
     const reader = new FileReader();
 
     reader.addEventListener("load", function() {
+        reset()
+
         preview.attr("src", reader.result); // base 64 ENCODE
 
         var csv = new CSVtoVcard(reader.result, 'data.csv')
