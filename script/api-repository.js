@@ -1,6 +1,8 @@
-let BASE_URL = "https://vcardconverter.wl.r.appspot.com"
+// let BASE_URL = "https://vcardconverter.wl.r.appspot.com"
+let BASE_URL = "http://127.0.0.1:8080"
 
 function postVcardToCsv(data) {
+
    $.ajax({
         url: BASE_URL + '/convert-to-csv',
         type: 'post',
@@ -29,6 +31,7 @@ function postVcardToCsv(data) {
 }
 
 function postCsvToVcard(data) {
+
     $.ajax({
         url: BASE_URL + '/convert-to-vcard',
         type: 'post',
