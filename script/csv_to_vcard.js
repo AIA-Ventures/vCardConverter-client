@@ -62,10 +62,6 @@ function setUpUI(csv) {
     var headers = csv.headers
 
     for (var i = 0; i < headers.length; i++) {
-        if (headers[i] == "") {
-            continue
-        }
-
         var appendString = '<tr><td>' + headers[i] + '</td><td>' + '<input class="autoComplete" type="text" tabindex="1">' + '</td><td>' + removeButton(i) + '</td></tr>'
         
         appendHtml($("#mapContainer"), appendString)
@@ -138,7 +134,7 @@ class CSVtoVcard {
     }
 
     samplefield(id) {
-        return this.csv_arr[1][this.headers.indexOf(id) + 1]
+        return this.csv_arr[1][this.headers.indexOf(id)]
     }
 
     initHeaders(csvString) {
