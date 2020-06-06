@@ -194,6 +194,9 @@ class CSVtoVcard {
             mapping: JSON.stringify(this.mapping)
         }
 
+        console.log("POSTING= ")
+        console.log(this.mapping)
+
         postCsvToVcard(data)
     }
 
@@ -251,6 +254,8 @@ class CSVtoVcard {
         this.mapping[this.headers[box_idx]] = selection.vcard
         this.uimapping[this.headers[box_idx]] = selection.ui
         this.uimapping[this.headers[box_idx]].title = selection.title
+
+        console.log(this.mapping)
 
         this.updateContactCardUI()
     }
