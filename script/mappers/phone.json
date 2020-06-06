@@ -31,36 +31,45 @@
         },
         {
           "inject_map": {
-            "subtype": "Work",
+            "subtype": "Mobile",
             "order": 1
+          },
+          "tags": ["mobile, cell"]
+        },
+        {
+          "inject_map": {
+            "subtype": "iPhone",
+            "order": 2
+          },
+          "tags": [
+            "iPhone"
+          ]
+        },
+        {
+          "inject_map": {
+            "subtype": "Work",
+            "order": 3
           },
           "tags": ["work", "office"]
         },
         {
           "inject_map": {
             "subtype": "Fax",
-            "order": 2
+            "order": 4
           },
           "tags": ["Fax"]
         },
         {
           "inject_map": {
             "subtype": "Pager",
-            "order": 3
+            "order": 5
           },
           "tags": ["pager"]
         },
         {
           "inject_map": {
-            "subtype": "iPhone",
-            "order": 4
-          },
-          "tags": ["iPhone"]
-        },
-        {
-          "inject_map": {
             "subtype": "Other",
-            "order": 5
+            "order": 6
           },
           "tags": ["other"]
         }
