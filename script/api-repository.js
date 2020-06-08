@@ -1,5 +1,5 @@
-// let BASE_URL = "https://vcardconverter.wl.r.appspot.com"
-let BASE_URL = "http://127.0.0.1:8080"
+let BASE_URL = "https://vcardconverter.wl.r.appspot.com"
+// let BASE_URL = "http://127.0.0.1:8080"
 
 function postVcardToCsv(data) {
 
